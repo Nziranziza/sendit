@@ -1,5 +1,10 @@
-form{
+.form{
     margin-top: 10px;
     padding: 5px;
-    padding-right: 8px;   
+    padding-right: 8px;
+    margin:auto;
+    width: 300px; 
+}
+.form-3{
+width:33.333333%
 }

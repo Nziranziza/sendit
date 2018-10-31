@@ -7,10 +7,12 @@ body{
     background-color: aliceblue;
     line-height: 1.5;
     margin: 0px;
+    font-size: 14px;
 }
 a{
    text-decoration: none;
 }
+/*designing a button*/
 .button{
   display: inline-block;
   font-weight: 400;
@@ -23,12 +25,10 @@ a{
   line-height: 1.5;
   border-radius: 0.25rem;
 }
+/*navigation for the homepage*/
 nav{
     background-color:transparent;
     margin-bottom: 0px
-}
-h1{
-   text-align:  center;
 }
 footer{
     text-align: center;
