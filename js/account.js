@@ -43,14 +43,15 @@ function login(){
             if(email===remail){
                 if(password===rpassword){
                     alert("login successful");
+                    location="../UI/createparcel.html";
+                    return true
                 }else{
                     var errarea=document.getElementById("err-msg");
                     errarea.innerHTML="The password is incorrect";
-                    return true
                 }
             }
-            var errarea=document.getElementById("err-msg");
-            errarea.innerHTML="The email is incorrect";
         }
+        var errarea=document.getElementById("err-msg");
+        errarea.innerHTML="The email is incorrect";
     }
 }
