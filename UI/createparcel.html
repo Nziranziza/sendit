@@ -10,7 +10,7 @@
         <link href="../css/header.css" rel="stylesheet">
         <link href="../css/createAcc.css" rel="stylesheet">
     </head>
-    <body>
+    <body onload="fetchParcel()">
         <header>
             <nav>
                 <ul>
@@ -34,8 +34,8 @@
                 <button class="button">Book Parcel</button>
             </div>
             <div class="block">
-            <div class="box form-3">
-                <form action="#">
+            <div class="form-3">
+                <form action="#" class="box">
                     <label>Please indicate where your parcel is loacted</label>
                     <br />
                     <input type="text" placeholder="From" class="full-width" id="from" required><br />
@@ -45,16 +45,19 @@
                     <label>How heavy is your box</label>
                     <br />
                     <input type="number" class="full-width" id="weight"><br />
-                    <button type="submit" class="button" onclick="displayParcel()">Create order</button>
+                    <button type="submit" class="button" onclick="saveParcel()">Create order</button>
                 </form>        
             </div>
             <div id="display" class="form-3">
+            </div>
+            <div class="form-3 margin-left ads">
+                <img src="../img/home-courier.png"/>
             </div>
         </div>
         <footer>
            <hr />
            <p>&copy SendIT 2018. <a href="#" style="padding-right:10px">Terms</a><a href="#">Privacy</a></p>
-           <script src="../js/index.js"></script>
+           <script src="../js/parcel.js"></script>
         </footer>
     </div>
     </body>

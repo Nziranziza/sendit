@@ -90,3 +90,9 @@ nav{
 #err-msg{
     color:red
 }
+.margin-left{
+margin-left: 20px;
+}
+.ads img{
+    float:right;
+}
