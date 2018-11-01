@@ -47,7 +47,7 @@ footer{
   margin-right: auto;
   margin-left: auto;
   width: 80%;
-  margin-top: 100px;
+  margin-top: 90px;
 }
 td{
     padding-left: 50px;
@@ -98,24 +98,30 @@ margin-left: 20px;
     float:right;
 }
 .label{
-    border: 1px solid #000;
+    border: 1px solid rgb(158, 148, 148);
     display: inline-block;
     max-width: 100%;
     margin-bottom: 5px;
     font-weight: bold;
-    border-radius:1px;
+    border-radius:2px;
     color:white;
     margin-right:5px; 
 }
 .del{
     background-color: #d9534f;
 }
-.sucess{
+.success{
     background-color:#5cb85c
+}
+.primary{
+ background-color:#337ab7
 }
 .fixed-top{
     position:fixed;
     top:0;
     width:100%;
     overflow: hidden;
+}
+.fixed{
+    position:fixed;
 }

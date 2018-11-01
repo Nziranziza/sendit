@@ -52,14 +52,16 @@ function fetchParcel(){
         var date=parcels[i].createdAt;
         var ordered=parcels[i].ordered ? "Cancel":"Order";
         var id=parcels[i].id;
+        var btnclass=parcels[i].ordered ? "label del":"label success";
         displayParcel.innerHTML+="<div class='box margin-left'>"+
-                           "<h3>Parcel order from "+from+" to "+destination+"<h3>"+
+                           "<h3>Parcel order from "+from+" to "+destination+"</h3>"+
                            "<label>Status: "+status+"</label></br />"+
                            "<label>Weight: "+weight+" kg</label><br />"+
                            "<label>Price: "+price+"</label><br />"+
                            "<label>"+date.toString()+"</label><br />"+
-                           "<button onClick='orderParcel("+id+")'>"+ordered+"</button>"+
-                           "<button onClick='changeLocation("+id+")'>Change location</button>"
+                           "<button onClick='orderParcel("+id+")' class='"+btnclass+"'>"+ordered+"</button>"+
+                           "<button onClick='edit("+id+")' class='label primary'>Change location</button>"+
+                           "<div id='"+id+"'></div>"
                        "</div>"
     }
 }
@@ -73,4 +75,22 @@ function orderParcel(id){
     }
     localStorage.setItem('parcels',JSON.stringify(parcels));
     fetchParcel();
+}
+//Change destination
+function changeDestination(id){
+    var parcels=JSON.parse(localStorage.getItem('parcels'));
+    var destination=document.getElementById(id+"i").value;
+    for (i=0;i<parcels.length;i++){
+        if(id===parcels[i].id){
+           parcels[i].destination=destination;
+        }
+    }
+    localStorage.setItem('parcels',JSON.stringify(parcels));
+    fetchParcel();
+}
+//bring destination text field
+function edit(id){
+  var dist=document.getElementById(id)
+  dist.innerHTML="<input type='text' placeholder='Type in new destination' id='"+id+"i'><br />"+
+                 "<button class='label primary' onClick='changeDestination("+id+")'>Update</button>"
 }
