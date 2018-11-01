@@ -115,3 +115,27 @@ function deleteParcel(id){
     localStorage.setItem('parcels',JSON.stringify(parcels));
     fetchParcel();
 }
+//fetch parcels for the admin
+function adminParcel(){
+    var parcels=JSON.parse(localStorage.getItem('parcels'));
+    for(i=0;i<parcels.length;i++){
+        var from=parcels[i].from;
+        var destination=parcels[i].destination;
+        var weight=parcels[i].weight;
+        var delivered=parcels[i].delivered;
+        var price=parcels[i].price;
+        var date=parcels[i].createdAt;
+        var id=parcels[i].id;
+        var status=delivered ? "Delivered":"In transit";
+        var adm=document.getElementById('admin');
+        adm.innerHTML+="<tr class='tadm'>"+
+        "<td>"+from+"</td>"+
+        "<td>"+destination+"</td>"+
+        "<td>"+price+"</td>"+
+        "<td>"+weight+"</td>"+
+        "<td>"+status+"</td>"+
+        "<td>"+id+"</td>"+
+     "</tr>"
+    }
+    
+}
