@@ -16,14 +16,17 @@
             <nav>
                 <ul>
                     <li style="float:left"><a href="../index.html"><img src="../img/send.png" alt="Slogo" id="logo"><label class="top-label">SendIT</label></a></li>
-                    <li><a href="#"><b>CONTACT US</b></a></li>
-                    <li><a href="#"><b>ABOUT US</b></a></li>
-                    <li><a href="login.html"><b>LOGIN</b></a></li>
-                    <li><a href="../index.html"><b>HOME</b></a></li>
+                    <div class="margin-top">
+                       <li><a href="#"><b>CONTACT US</b></a></li>
+                       <li><a href="#"><b>ABOUT US</b></a></li>
+                       <li><a href="login.html"><b>LOGIN</b></a></li>
+                       <li><a href="../index.html"><b>HOME</b></a></li>
+                    </div>
                 </ul>
             </nav>
         </header>
-        <form action="./createparcel.html" class="form">
+        <div class="container">
+        <form action="#" class="form" onSubmit="login()">
             <div>
                 <img src="../img/send.png" class="icon img-center"/> 
                 <div class="to-center">
@@ -31,18 +34,24 @@
                 </div>
             </div>
             <div class="box">
-                <input type="text" placeholder="Email/Username" name="username" class="full-width">
+                <input type="text" placeholder="Email" name="email" class="full-width" id="email" required>
                 <br />
-                <input type="password" placeholder="Password" class="full-width">
+                <input type="password" placeholder="Password" class="full-width"id="password" required>
                 <br />
                 <button type="submit" class="button full-width">Login</button>
+            </div>
+            <div id="err-msg">
+
             </div>
             <div class="to-center box">
                 <a href="create-account.html">Create an account</a>
             </div>
         </form>
         <footer>
+            <hr/>
             <p>&copy SendIT 2018. <a href="#" style="padding-right:10px">Terms</a><a href="#">Privacy</a></p>
+            <script src="../js/account.js"></script>
         </footer>
+    </div>
     </body>
 </html>

@@ -15,32 +15,37 @@
             <nav>
                 <ul>
                     <li style="float:left"><a href="../index.html"><img src="../img/send.png" alt="Slogo" id="logo"><label class="top-label">SendIT</label></a></li>
-                    <li><a href="#"><b>CONTACT US</b></a></li>
-                    <li><a href="#"><b>ABOUT US</b></a></li>
-                    <li><a href="login.html"><b>LOGIN</b></a></li>
-                    <li><a href="../index.html"><b>HOME</b></a></li>
+                    <div class="margin-top">
+                       <li><a href="#"><b>CONTACT US</b></a></li>
+                       <li><a href="#"><b>ABOUT US</b></a></li>
+                       <li><a href="./UI/login.html"><b>LOGIN</b></a></li>
+                       <li><a href="../index.html"><b>HOME</b></a></li>
+                    </div>
                 </ul>
             </nav>
         </header>
-        <form action="./createparcel.html" class="form">
+        <div class="container">
+         <form action="./createparcel.html" class="form" onsubmit="createAccount()">
             <div class="box">
-                <input type="name" placeholder="First Name" name="fname" class="full-width">
-                <input type="name" placeholder="Last Name" name="lname" class="full-width">
+                <input type="name" placeholder="First Name" name="fname" class="full-width" id="fname" required>
+                <input type="name" placeholder="Last Name" name="lname" class="full-width" id="lname" required>
                 <br />
-                <input type="email" placeholder="Email" name="email" class="full-width">
-                <input type="email" placeholder="Confirm email" name="cemail" class="full-width">
+                <input type="email" placeholder="Email" name="email" class="full-width" id="email" required>
+                <input type="email" placeholder="Confirm email" name="cemail" class="full-width" id="cemail" required>
                 <br />
-                <input type="password" placeholder="Password" class="full-width">
+                <input type="password" placeholder="Password" class="full-width" id="password" required>
                 <br />
                 <button type="submit" class="button full-width">Sign Up</button>
                 <div class="to-center">
                     <a href="login.html">Already have an account</a>
                 </div>
-            </div>
-            
-        </form>
+            </div>  
+         </form>
         <footer>
+         <hr/>
          <p>&copy SendIT 2018. <a href="#" style="padding-right:10px">Terms</a><a href="#">Privacy</a></p>
+         <script src="../js/account.js"></script>
         </footer>
+    </div>
     </body>
 </html>

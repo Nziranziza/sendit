@@ -32,7 +32,6 @@ nav{
 }
 footer{
     text-align: center;
-    background-color: blanchedalmond
 }
 .to-center{
     text-align: center;
@@ -45,10 +44,9 @@ footer{
     overflow: auto;
 }
 .container{
-  padding-right: 15px;
-  padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  width: 80%;
 }
 td{
     padding-left: 50px;
@@ -74,4 +72,21 @@ td{
   background-color:#fff;
   border-radius: 0.3rem;
   border:1px solid #d8dee2
+}
+.margin-top{
+    margin-top:30px;
+}
+.button-danger{
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+.block{
+    display: flex;
+}
+nav{
+    margin-bottom:8px; 
+}
+#err-msg{
+    color:red
 }

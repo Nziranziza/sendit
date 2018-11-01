@@ -11,13 +11,15 @@
     <body>
         <div class="bg-img">
         <header>
-            <nav>
+            <nav class="home-navbar">
                 <ul>
                     <li style="float:left"><a href="index.html"><img src="img/send.png" alt="Slogo" id="logo"><label class="top-label">SendIT</label></a></li>
-                    <li><a href="#"><b>CONTACT US</b></a></li>
-                    <li><a href="#"><b>ABOUT US</b></a></li>
-                    <li><a href="./UI/login.html"><b>LOGIN</b></a></li>
-                    <li><a href="index.html"><b>HOME</b></a></li>
+                    <div class="margin-top">
+                      <li><a href="#"><b>CONTACT US</b></a></li>
+                      <li><a href="#"><b>ABOUT US</b></a></li>
+                      <li><a href="./UI/login.html"><b>LOGIN</b></a></li>
+                      <li><a href="index.html"><b>HOME</b></a></li>
+                    </div>
                 </ul>
             </nav>
         </header>
@@ -26,7 +28,7 @@
             <h1>Welcome to SendIT</h1>
             <h2>A Fast ,Easy ,Trustworthy and Reliable courier service platform</h2>
             <br /><br /><br />
-            <a class="button" id="btn-start" href="./UI/create-account.html" onClick="welcome()">Get Started Now</a>
+            <a class="button" id="btn-start" href="./UI/create-account.html" onClick="displayParcel()">Get Started Now</a>
         </div>
         </div>
         <section>
@@ -62,6 +64,7 @@
             </div>
         </section>
         <footer>
+            <hr/>
             <p>&copy SendIT 2018. <a href="#" style="padding-right:10px">Terms</a><a href="#">Privacy</a></p>
             <script src="js/index.js"></script>
         </footer>
