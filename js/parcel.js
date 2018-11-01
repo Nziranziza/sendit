@@ -36,6 +36,14 @@ e.preventDefault();
 
 //Fetch parcel order and display them to the page
 function fetchParcel(){
+    if(localStorage.getItem('parcels')==null||!JSON.parse(localStorage.getItem('parcels')).length){
+    var displayParcel=document.getElementById("display");
+    displayParcel.innerHTML="<div class='box margin-left'>"+
+                  "<p>Your recent parcel delivery order is empty."+
+                  "Please create the first 3 for free</p>"+
+                  "</div>"
+
+    }else{
     //get the area to output the parcel delivery order
     var displayParcel=document.getElementById("display");
     var parcels=JSON.parse(localStorage.getItem('parcels'));
@@ -54,6 +62,7 @@ function fetchParcel(){
         var id=parcels[i].id;
         var btnclass=parcels[i].ordered ? "label del":"label success";
         displayParcel.innerHTML+="<div class='box margin-left'>"+
+                           "<button class='left' onclick='deleteParcel("+id+")'>x</button>"+
                            "<h3>Parcel order from "+from+" to "+destination+"</h3>"+
                            "<label>Status: "+status+"</label></br />"+
                            "<label>Weight: "+weight+" kg</label><br />"+
@@ -64,6 +73,7 @@ function fetchParcel(){
                            "<div id='"+id+"'></div>"
                        "</div>"
     }
+}
 }
 //Make an order
 function orderParcel(id){
@@ -93,4 +103,15 @@ function edit(id){
   var dist=document.getElementById(id)
   dist.innerHTML="<input type='text' placeholder='Type in new destination' id='"+id+"i'><br />"+
                  "<button class='label primary' onClick='changeDestination("+id+")'>Update</button>"
+}
+//delete parcel delivery order
+function deleteParcel(id){
+    var parcels=JSON.parse(localStorage.getItem('parcels'));
+    for(i=0;i<parcels.length;i++){
+        if(id===parcels[i].id){
+            parcels.splice(i,1);
+        }
+    }
+    localStorage.setItem('parcels',JSON.stringify(parcels));
+    fetchParcel();
 }

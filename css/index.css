@@ -68,7 +68,7 @@ td{
     margin-right: auto;
 }
 .box{
-  padding: 2rem 1rem;
+  padding: 1rem 1rem;
   margin-bottom: 2rem;
   background-color:#fff;
   border-radius: 0.3rem;
@@ -124,4 +124,10 @@ margin-left: 20px;
 }
 .fixed{
     position:fixed;
+}
+.left{
+    float:right;
+    border:none;
+    background-color: inherit;
+    margin-top: -10px;
 }
