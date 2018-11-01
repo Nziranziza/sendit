@@ -47,6 +47,7 @@ footer{
   margin-right: auto;
   margin-left: auto;
   width: 80%;
+  margin-top: 100px;
 }
 td{
     padding-left: 50px;
@@ -95,4 +96,26 @@ margin-left: 20px;
 }
 .ads img{
     float:right;
+}
+.label{
+    border: 1px solid #000;
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+    border-radius:1px;
+    color:white;
+    margin-right:5px; 
+}
+.del{
+    background-color: #d9534f;
+}
+.sucess{
+    background-color:#5cb85c
+}
+.fixed-top{
+    position:fixed;
+    top:0;
+    width:100%;
+    overflow: hidden;
 }
