@@ -8,6 +8,7 @@ body{
     line-height: 1.5;
     margin: 0px;
     font-size: 14px;
+    color: #337ab7
 }
 a{
    text-decoration: none;
@@ -37,7 +38,7 @@ footer{
     text-align: center;
 }
 #btn-start{
-    background-color: aqua
+    background-color: rgb(171, 226, 226)
 }
 .full-width{
     width:100%;
@@ -57,7 +58,7 @@ td{
     width:50px;
 }
 .icon{
-    width:50px;
+    width:30%;
 }
 .top-label{
     font-size: 50px;
@@ -130,4 +131,12 @@ margin-left: 20px;
     border:none;
     background-color: inherit;
     margin-top: -10px;
+}
+#why ol{
+   list-style-type: square;
+   font-size: 150%;
+}
+#why{
+    background-color: rgb(171, 226, 226);
+    color:#f1827e
 }
