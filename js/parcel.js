@@ -63,7 +63,7 @@ function fetchParcel(){
         var id=parcels[i].id;
         var btnclass=parcels[i].ordered ? "label del":"label success";
         displayParcel.innerHTML+="<div class='box margin-left'>"+
-                           "<button class='left' onclick='deleteParcel("+id+")'>x</button>"+
+                           "<div class='popup left' onMouseOver='popup("+id+")' onMouseOut='popup("+id+")' onclick='deleteParcel("+id+")'>x<span class='popuptext' id='"+id+"p'>Remove</span></div>"+
                            "<h3>Parcel order from "+from+" to "+destination+"</h3>"+
                            "<label>Status: "+status+"</label></br />"+
                            "<label>Weight: "+weight+" kg</label><br />"+

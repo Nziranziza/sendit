@@ -9,6 +9,7 @@
         <link href="../css/index.css" rel="stylesheet">
         <link href="../css/header.css" rel="stylesheet">
         <link href="../css/createAcc.css" rel="stylesheet">
+        <link href="../css/popup.css" rel="stylesheet" type="text/css">
         <link rel="shortcut icon" type="image/png" href="../img/send.png"/>
     </head>
     <body onload="fetchParcel()">
@@ -58,10 +59,14 @@
                 <img src="../img/home-courier.png"/> 
             </div>
         </div>
+        <div class="popup left" onMouseOver="popup()">x
+            <span class="popuptext" id="myPopup">Remove</span>
+          </div>
         <footer>
            <hr />
            <p>&copy SendIT 2018. <a href="#" style="padding-right:10px">Terms</a><a href="#">Privacy</a></p>
-           <script src="../js/parcel.js"></script>
+           <script type="text/javascript" src="../js/parcel.js"></script>
+           <script type="text/javascript" src="../js/popup.js"></script>
         </footer>
     </div>
     </body>
