@@ -10,6 +10,7 @@
         <link href="../css/index.css" rel="stylesheet" media="screen" type="text/css">
         <link href="../css/header.css" rel="stylesheet" media="screen" type="text/css">
         <link href="../css/createAcc.css" rel="stylesheet" media="screen" type="text/css">
+        <link rel="shortcut icon" type="image/png" href="../img/send.png"/>
     </head>
     <body>
         <header>
@@ -26,7 +27,7 @@
             </nav>
         </header>
         <div class="container">
-        <form action="#" class="form" onSubmit="login()">
+        <form class="form" action="createparcel.html" onSubmit="return login()">
             <div>
                 <img src="../img/send.png" class="icon img-center"/> 
                 <div class="to-center">
@@ -38,9 +39,9 @@
                 <br />
                 <input type="password" placeholder="Password" class="full-width"id="password" required>
                 <br />
-                <button type="submit" class="button full-width">Login</button>
+                <button type="submit" class="button full-width" >Login</button>
             </div>
-            <div id="err-msg">
+            <div id="err-msg" class="to-center">
 
             </div>
             <div class="to-center box">
