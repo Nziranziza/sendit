@@ -42,12 +42,11 @@ function login(){
             var rpassword=accounts[i].password;
             if(email===remail){
                 if(password===rpassword){
-                    alert("login successful");
-                    location="../UI/createparcel.html";
                     return true
                 }else{
                     var errarea=document.getElementById("err-msg");
                     errarea.innerHTML="The password is incorrect";
+                    return false
                 }
             }
         }
