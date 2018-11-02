@@ -50,7 +50,8 @@ function fetchParcel(){
     displayParcel.innerHTML="";//make sure the area is empty
 
     //loop through all parcel delivery order and output them
-    for(let i=0;i<parcels.length;i++){
+    var length=parcels.length;
+    for(let i=length-1;i>=0;i--){
         var from=parcels[i].from;
         var destination=parcels[i].destination;
         var weight=parcels[i].weight;
