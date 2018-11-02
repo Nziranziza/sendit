@@ -110,12 +110,15 @@ margin-left: 20px;
 }
 .del{
     background-color: #d9534f;
+    color:white
 }
 .success{
-    background-color:#5cb85c
+    background-color:#5cb85c;
+    color:white
 }
 .primary{
- background-color:#337ab7
+ background-color:#337ab7;
+ color:white
 }
 .fixed-top{
     position:fixed;
