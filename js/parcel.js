@@ -129,6 +129,7 @@ function adminParcel(){
         var id=parcels[i].id;
         var status=delivered ? "Delivered":"In transit";
         var adm=document.getElementById('admin');
+        var btncls=delivered? "label success":"label primary"
         adm.innerHTML+="<tr class='tadm'>"+
         "<td>"+from+"</td>"+
         "<td>"+destination+"</td>"+
@@ -136,7 +137,18 @@ function adminParcel(){
         "<td>"+weight+"</td>"+
         "<td>"+status+"</td>"+
         "<td>"+id+"</td>"+
+        "<td><button class='label primary' onClick='deliverParcel('"+id+"')>Deliver</button>"+
      "</tr>"
     }
     
+}
+function deliverParcel(id){
+    var parcels=JSON.parse(localStorage.getItem('parcels'));
+    for (i=0;i<parcels.length;i++){
+        if(id===parcels[i].id){
+           parcels[i].delivered="Delivered";
+        }
+    }
+    localStorage.setItem('parcels',JSON.stringify(parcels));
+    fetchParcel();
 }
