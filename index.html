@@ -2,70 +2,72 @@
 
 <html>
     <head>
-        <title>
-            SendIT- a fast and reliable courier service
-        </title>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="keywords" content="Courier service,Parcel delivery order,Parcel delivery,SendIT">
+        <meta name="author" content="Daniel Nziranziza">
+        <meta name="description" content="A fast and reliable courier service">
+        <title>SendIT- a fast and reliable courier service</title>
         <link rel="stylesheet" href="css/index.css">
-        <link rel="stylesheet" href="css/header.css">
         <link rel="shortcut icon" type="image/png" href="img/send.png"/>
     </head>
     <body>
-        <div class="bg-img">
-        <header>
+
+        <header id="bg-img">
+            <!-- stands for navigation bar-->
+            <div class="container">
+            <div id="brand">
+                <a href="index.html"><img src="img/send.png" alt="Slogo" id="logo"><label class="top-label">SendIT</label></a>
+            </div>
             <nav class="home-navbar">
                 <ul>
-                    <li style="float:left"><a href="index.html"><img src="img/send.png" alt="Slogo" id="logo"><label class="top-label">SendIT</label></a></li>
-                    <div class="margin-top">
-                      <li><a href="#"><b>CONTACT US</b></a></li>
-                      <li><a href="#"><b>ABOUT US</b></a></li>
-                      <li><a href="./UI/login.html"><b>LOGIN</b></a></li>
-                      <li><a href="index.html"><b>HOME</b></a></li>
-                    </div>
+                    <li><a href="index.html"><b>HOME</b></a></li>
+                    <li><a href="./UI/login.html"><b>LOGIN</b></a></li>
+                    <li><a href="#"><b>CONTACT US</b></a></li>
+                    <li><a href="#"><b>ABOUT US</b></a></li>                   
                 </ul>
             </nav>
+            </div>
+            <!--stands for description and button get started-->
+            <div class="to-center">
+               
+               <h1>Welcome to SendIT</h1>
+               <h2>A Fast ,Easy ,Trustworthy and Reliable courier service platform</h2>
+                <a class="button" id="btn-start" href="./UI/create-account.html" onClick="displayParcel()">Get Started Now</a>
+            </div>
         </header>
-        <div class="to-center">
-            <br /><br /><br /><br /><br />
-            <h1>Welcome to SendIT</h1>
-            <h2>A Fast ,Easy ,Trustworthy and Reliable courier service platform</h2>
-            <br /><br /><br />
-            <a class="button" id="btn-start" href="./UI/create-account.html" onClick="displayParcel()">Get Started Now</a>
-        </div>
-        </div>
-        <section>
+
+        <section id="rectangles"><!--Stands for our services-->
             <div class="container">
-                <h2 class="to-center">Our services</h2>
-                <table class="full-width to-center">
-                    <tbody>
-                        <tr>
-                            <td>
+                <h1 class="to-center">Our services</h1>
+                            <div class="rectangle-3">
                                 <h3>Parcel Delivery</h3>
                                 <img src="img/motorcycle.png" alt="serv1" class="icon"/>
                                 <p><b>We deliver your parcel to different location with our trustworthy and reliable courier services.
                                    No matter how is your parcel we make sure we deliver it on time and without any damage</b>
                                 </p>
-                            </td>
-                            <td>
+                            </div>
+                            <div class="rectangle-3">
                                 <h3>Booking Parcel Delivery</h3>
                                 <img src="img/online-booking.png" alt="serv2" class="icon"/>
                                 <p><b>We deliver your parcel to different location with our trustworthy and reliable courier services.
                                    No matter how is your parcel we make sure we deliver it on time and without any damage</b>
                                 </p>
-                            </td>
-                            <td>
+                            </div>
+                            <div class="rectangle-3">
                                 <h3>Comparing courier quotes</h3>
                                 <img src="img/bar-chart.png" alt="serv3" class="icon"/>
                                 <p><b>We deliver your parcel to different location with our trustworthy and reliable courier services.
                                    No matter how is your parcel we make sure we deliver it on time and without any damage</b>
                                 </p>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table>
-                    <tbody>
-                        <td>
-                            <div class="box" id="why">
+                            </div>   
+            </div>
+        </section>
+
+        <section><!--Stands for what we do and ads-->
+            <div class="container">
+                    <div class="box" id="why">
                             <h2 class="to-center">Why use SendIT?</h2>
                             <ol>
                                 <li>Quickest Rwanda delivery services</li>
@@ -74,18 +76,12 @@
                                 <li>Available on demand 24/7</li>
                                 <li>Motorbike & Van services</li>
                             </ol>
-                            </div>
-                        </td>
-                        <td>
-
-                        </td>
-                    </tbody>
-                </table>
+                    </div>
             </div>
         </section>
         <footer>
             <hr/>
-            <p>&copy SendIT 2018. <a href="#" style="padding-right:10px">Terms</a><a href="#">Privacy</a></p>
+            <p>&copy SendIT 2018. <a href="#" id="footer-link">Terms</a><a href="#">Privacy</a></p>
             <script src="js/index.js"></script>
         </footer>
     </body>

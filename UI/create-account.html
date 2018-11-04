@@ -2,30 +2,43 @@
 
 <html>
     <head>
-        <title>
-            SendIT- a fast and reliable courier service
-        </title>
-        <link href="../css/login.css" rel="stylesheet">
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="keywords" content="Courier service,Parcel delivery order,Parcel delivery,SendIT">
+        <meta name="author" content="Daniel Nziranziza">
+        <meta name="description" content="A fast and reliable courier service">
+        <title>SendIT- a fast and reliable courier service</title>
         <link href="../css/index.css" rel="stylesheet">
-        <link href="../css/header.css" rel="stylesheet">
-        <link href="../css/createAcc.css" rel="stylesheet">
         <link rel="shortcut icon" type="image/png" href="../img/send.png"/>
     </head>
+
     <body>
-        <header>
-            <nav class="fixed-top">
-                <ul>
-                    <li style="float:left"><a href="../index.html"><img src="../img/send.png" alt="Slogo" id="logo"><label class="top-label">SendIT</label></a></li>
-                    <div class="margin-top">
-                       <li><a href="#"><b>CONTACT US</b></a></li>
-                       <li><a href="#"><b>ABOUT US</b></a></li>
-                       <li><a href="./UI/login.html"><b>LOGIN</b></a></li>
-                       <li><a href="../index.html"><b>HOME</b></a></li>
-                    </div>
-                </ul>
-            </nav>
-        <div class="container">
-         <form action="./createparcel.html" class="form" onsubmit="createAccount()">
+<!--The header of the page-->
+            <header>
+                <div class="container">
+                        <div id="brand">
+                            <a href="../index.html"><img src="../img/send.png" alt="Slogo" id="logo"><label class="top-label">SendIT</label></a>
+                        </div>
+                    <nav>
+                        <ul>
+                            <li><a href="../index.html"><b>HOME</b></a></li>
+                            <li><a href="login.html"><b>LOGIN</b></a></li>
+                            <li><a href="#"><b>CONTACT US</b></a></li>
+                            <li><a href="#"><b>ABOUT US</b></a></li>    
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+            <div class="container">
+            <div class="rectangle-2-3">
+                <h3>Create an account and order your first 3 palicery delivery for free</h3>
+                <img src="../img/home-courier.png">
+            </div>
+<!--The create account form-->
+        <div class="rectangle-3">
+         <form action="./createparcel.html" onsubmit="createAccount()">
+            <h2 class="to-center">Create an account with us</h2>
             <div class="box">
                 <input type="name" placeholder="First Name" name="fname" class="full-width" id="fname" required>
                 <input type="name" placeholder="Last Name" name="lname" class="full-width" id="lname" required>
@@ -34,18 +47,23 @@
                 <input type="email" placeholder="Confirm email" name="cemail" class="full-width" id="cemail" required>
                 <br />
                 <input type="password" placeholder="Password" class="full-width" id="password" required>
-                <br />
-                <button type="submit" class="button full-width">Sign Up</button>
+                <p>By clicking sign up,you agree with our <a href="#">Terms</a> and <a href="#">Conditions</a></p>
+                <button type="submit" class="button full-width primary">Sign Up</button>
                 <div class="to-center">
                     <a href="login.html">Already have an account</a>
                 </div>
             </div>  
          </form>
+        </div>
+        </div>
+<!--The footer of the page-->
         <footer>
-         <hr/>
-         <p>&copy SendIT 2018. <a href="#" style="padding-right:10px">Terms</a><a href="#">Privacy</a></p>
-         <script src="../js/account.js"></script>
+             <div class="container">
+                 <hr/>
+                 <p>&copy SendIT 2018. <a href="#" style="padding-right:10px">Terms</a><a href="#">Privacy</a></p>
+                 <script src="../js/account.js"></script>
+             </div>
         </footer>
-    </div>
+
     </body>
 </html>

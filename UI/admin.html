@@ -2,30 +2,33 @@
 
 <html>
     <head>
-        <title>
-            SendIT- a fast and reliable courier service
-        </title>
-        <link href="../css/login.css" rel="stylesheet">
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="keywords" content="Courier service,Parcel delivery order,Parcel delivery,SendIT">
+        <meta name="author" content="Daniel Nziranziza">
+        <meta name="description" content="A fast and reliable courier service">
+        <title>SendIT- a fast and reliable courier service</title>
         <link href="../css/index.css" rel="stylesheet">
-        <link href="../css/header.css" rel="stylesheet">
-        <link href="../css/createAcc.css" rel="stylesheet">
         <link rel="shortcut icon" type="image/png" href="../img/send.png"/>
     </head>
     <body onload="adminParcel()">
-        <header>
-            <nav class="fixed-top">
-                <ul>
-                    <li style="float:left"><a href="../index.html"><img src="../img/send.png" alt="Slogo" id="logo"><label class="top-label">SendIT</label></a></li>
-                    <div class="margin-top">
-                       <li><a href="#"><b>CONTACT US</b></a></li>
-                       <li><a href="#"><b>ABOUT US</b></a></li>
-                       <li><a href="./UI/login.html"><b>LOGIN</b></a></li>
-                       <li><a href="../index.html"><b>HOME</b></a></li>
+            <header>
+                    <div class="container">
+                        <div id="brand">
+                            <a href="../index.html"><img src="../img/send.png" alt="Slogo" id="logo"><label class="top-label">SendIT</label></a>
+                        </div>
+                    <nav>
+                        <ul>
+                            <li><a href="../index.html"><b>HOME</b></a></li>
+                            <li><a href="login.html"><b>LOGIN</b></a></li>
+                            <li><a href="#"><b>CONTACT US</b></a></li>
+                            <li><a href="#"><b>ABOUT US</b></a></li>     
+                        </ul>
+                    </nav>
                     </div>
-                </ul>
-            </nav>
-        </header>
-        <div style="margin-top: 80px">
+                </header>
+        <div>
         <div class="block">
             <div class="box default adctr fixed">
                 <ol style="list-style-type:none;padding-left:0px">
@@ -53,7 +56,8 @@
             <div class="box primary adctr">Vistors</div>
             <div class="box success adctr">Sales</div>
             </div>
-            <div style=" block width:120%">
+ <!---The parcel delivery output-->           
+            <div id="admin-table">
             <table>
                     <tbody id="admin">
     
