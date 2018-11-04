@@ -14,9 +14,10 @@ function saveParcel(e){
         weight:weight,
         delivered:false,
         price:0,
-        id:Math.random()*10**16,
+        id:Math.random()*10**17,
         createdAt:new Date(),
         ordered:false,
+        present_loc:from
 
     }
     //Create parcels object and Save the parcel
@@ -61,13 +62,15 @@ function fetchParcel(){
         var date=parcels[i].createdAt;
         var ordered=parcels[i].ordered ? "Cancel":"Order";
         var id=parcels[i].id;
+        var present_loc=parcels[i].present_loc;
         var btnclass=parcels[i].ordered ? "label del":"label success";
         displayParcel.innerHTML+="<div class='box margin-left'>"+
-                           "<div class='popup left' onMouseOver='popup("+id+")' onMouseOut='popup("+id+")' onclick='deleteParcel("+id+")'>x<span class='popuptext' id='"+id+"p'>Remove</span></div>"+
+                           "<div class='popup right' onMouseOver='popup("+id+")' onMouseOut='popup("+id+")' onclick='deleteParcel("+id+")'>x<span class='popuptext' id='"+id+"p'>Remove</span></div>"+
                            "<h3>Parcel order from "+from+" to "+destination+"</h3>"+
                            "<label>Status: "+status+"</label></br />"+
                            "<label>Weight: "+weight+" kg</label><br />"+
                            "<label>Price: "+price+"</label><br />"+
+                           "<label>Present location: "+present_loc+"</label>"+
                            "<label>"+date.toString()+"</label><br />"+
                            "<button onClick='orderParcel("+id+")' class='"+btnclass+"'>"+ordered+"</button>"+
                            "<button onClick='edit("+id+")' class='label primary'>Change location</button>"+
@@ -116,8 +119,12 @@ function deleteParcel(id){
     localStorage.setItem('parcels',JSON.stringify(parcels));
     fetchParcel();
 }
+/*Admin codes
+_______________________________________________________________________________________________________________________________________*/
 //fetch parcels for the admin
 function adminParcel(){
+    var adm=document.getElementById('admin');
+    adm.innerHTML="";
     var parcels=JSON.parse(localStorage.getItem('parcels'));
     for(i=0;i<parcels.length;i++){
         var from=parcels[i].from;
@@ -127,28 +134,72 @@ function adminParcel(){
         var price=parcels[i].price;
         var date=parcels[i].createdAt;
         var id=parcels[i].id;
+        var present_loc=parcels[i].present_loc;
         var status=delivered ? "Delivered":"In transit";
-        var adm=document.getElementById('admin');
-        var btncls=delivered? "label success":"label primary"
+        var btncls=delivered? "label success":"label primary";
+        var btn_caption=delivered ? "Success":"Deliver";
         adm.innerHTML+="<tr class='tadm'>"+
-        "<td>"+from+"</td>"+
+        "<td><img src='../img/arrow.png' style='width:15px' onClick='detailParcel("+id+")' id='"+id+"img'></img> "+from+"</td>"+
         "<td>"+destination+"</td>"+
         "<td>"+price+"</td>"+
-        "<td>"+weight+"</td>"+
+        "<td>"+weight+" Kg</td>"+
         "<td>"+status+"</td>"+
+        "<td>"+present_loc+"</td>"+
         "<td>"+id+"</td>"+
-        "<td><button class='label primary' onClick='deliverParcel('"+id+"')>Deliver</button>"+
-     "</tr>"
+        "<td><button class='"+btncls+"' onClick='deliverParcel("+id+")'>"+btn_caption+"</button>"+
+     "</tr>"+"<div id='"+id+"'></div>"
     }
     
 }
+//Deliver the parcel order for Admin 
 function deliverParcel(id){
     var parcels=JSON.parse(localStorage.getItem('parcels'));
     for (i=0;i<parcels.length;i++){
         if(id===parcels[i].id){
-           parcels[i].delivered="Delivered";
+           parcels[i].delivered=true;
         }
     }
     localStorage.setItem('parcels',JSON.stringify(parcels));
-    fetchParcel();
+    adminParcel();
+}
+//Drop down details
+function detailParcel(id){
+    var parcels=JSON.parse(localStorage.getItem('parcels'));
+    var view=document.getElementById(id);
+    for(i=0;i<parcels.length;i++){
+        if(id===parcels[i].id){
+            var status=parcels[i].delivered ? "Delivered":"In transit";
+            if(view.innerHTML)
+              view.innerHTML=""
+            else
+              view.innerHTML="<div class='box'>"+
+                             "<h3>Parcel delivery Order details</h3>"+
+                             "<b>Id:</b> "+parcels[i].id+"<br />"+
+                             "<b>From:</b> "+parcels[i].from+"<br />"+
+                             "<b>Destination:</b> "+parcels[i].destination+"<br />"+
+                             "<b>Price:</b> "+parcels[i].price+"<br />"+
+                             "<b>Status:</b> "+status+"<br />"+
+                             "<b>Present location:</b><br />"+
+                             "<input type='text' value='"+parcels[i].present_loc+"'placeholder='New present location' id='"+id+"pr'>"+
+                             "<button class='button primary' onClick='changePresentloc("+id+")'>Update</button>"
+                             "</div>";
+        }
+    }
+    var arrow_url=view.innerHTML ? "../img/arrowdown.png":"../img/arrow.png";
+    document.getElementById(id+"img").setAttribute('src',arrow_url);
+}
+//Change Present location
+function changePresentloc(id){
+    var parcels=JSON.parse(localStorage.getItem('parcels'));
+    var newlocation=document.getElementById(id+'pr').value;
+    if(newlocation){
+    for (i=0;i<parcels.length;i++){
+        if(id===parcels[i].id){
+           parcels[i].present_loc=newlocation;
+        }
+    }
+    localStorage.setItem('parcels',JSON.stringify(parcels));
+    adminParcel();
+ }else
+ alert("Type in new location");
 }

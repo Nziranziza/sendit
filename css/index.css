@@ -187,13 +187,13 @@ ______________________________________________________________________*/
   }
 .rectangle-3{
     float:left;
-    width:31.4%;
+    width:30%;
     padding: 10px;
     text-align: center
 }
 .rectangle-2-3{
     float:left;
-    width:62.8%;
+    width:60%;
     padding: 10px;
     text-align: center
 }
@@ -312,9 +312,7 @@ body .rectangle-3,.rectangle-2-3{
     }
 }
 @media(max-width:320px){
-body{
-    display:none
-}
+
 }
 
 
