@@ -289,6 +289,33 @@ ________________________________________________________________________________
     border-bottom:#2376be solid;
 }
 
+
+/*About page style
+______________________________________________________________________________*/
+#about-img {
+    background:url("../img/about.jpg") no-repeat 0px -300px ;
+    min-height:500px;
+    background-size: cover;
+    color:aquamarine;
+    text-align: center
+
+  }
+#about-img span{
+  font-size: 100px;
+  margin-top: 50px;
+}
+#about-icon{
+    width:100%;
+}
+.about-section .rectangle-2-3{
+    font-size:20px
+}
+#guitar{
+    height:500px;
+}
+#interest{
+    background-color: #d8dee2
+}
 /*Small Devices
 _____________________________________________________________________________*/
 @media(max-width:768px){
