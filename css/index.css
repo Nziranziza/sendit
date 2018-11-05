@@ -316,6 +316,14 @@ ______________________________________________________________________________*/
 #interest{
     background-color: #d8dee2
 }
+
+/*Contact us page
+_________________________________________________________________________________*/
+#contact-section .rectangle-3,#contact-section .rectangle-2-3{
+    text-align: left;
+    margin-right: 30px;
+}
+
 /*Small Devices
 _____________________________________________________________________________*/
 @media(max-width:768px){
