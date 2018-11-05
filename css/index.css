@@ -192,13 +192,26 @@ ______________________________________________________________________*/
     padding: 10px;
     text-align: center
 }
+.square-3{
+    float:left;
+    width:30%;
+    padding: 10px;
+    text-align: center
+}
+.square-2-3{
+    float:left;
+    width:60%;
+    padding: 10px;
+}
 .rectangle-2-3{
     float:left;
     width:60%;
     padding: 10px;
     text-align: center
 }
-
+#home-section{
+    background-color: #d8dee2
+}
 
 /*Header style
 ______________________________________________________________________*/
@@ -372,7 +385,7 @@ body .form{
 .form #login-title{
     font-size: 20px;
 }
-body .rectangle-3,.rectangle-2-3{
+body .rectangle-3,body .rectangle-2-3{
     width: 98%;
     margin:auto;
     float: none;
