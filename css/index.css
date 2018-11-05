@@ -246,9 +246,6 @@ footer{
 
 /*Admin page style
 _____________________________________________________________________________*/
-#admin-table{
-    margin-left:200px
-}
 .tadm td,.tadm th{
     border-style: solid;
     background-color:#999;
@@ -263,6 +260,17 @@ _____________________________________________________________________________*/
     font-size: 1.5rem;
     display:table;
     margin:5px;
+}
+#admin-header .adctr{
+width: 25%;
+}
+#dmin-header{
+    width:80%;
+}
+#admin-panel{
+    height: 500px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 /*User Dashboard

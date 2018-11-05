@@ -29,36 +29,27 @@
                     </div>
                 </header>
         <div>
-        <div class="block">
-            <div class="box default adctr fixed">
-                <ol style="list-style-type:none;padding-left:0px">
-                    <li>Dashboard</li>
-                    <li>Mail</li>
-                    <li>Charts</li>
-                    <li>Maps</li>
-                    <li>Extra</li>
-                    <li>Dashboard</li>
-                    <li>Mail</li>
-                    <li>Charts</li>
-                    <li>Maps</li>
-                    <li>Extra</li>
-                    <li>Dashboard</li>
-                    <li>Mail</li>
-                    <li>Charts</li>
-                    <li>Maps</li>
-                    <li>Extra</li>
-                </ol>
+        <div class="container block">
+            <div class="box default adctr" id="admin-panel">
+                <ul>
+                    <li><a class="button default" href="admin.html">Dashboard</a></li>
+                    <li><a class="button default" href="#">Mail</a></li>
+                    <li><a class="button default" href="#">All Parcel DOs</a></li>
+                    <li><a class="button default" href="#">Delivered POs </a></li>
+                    <li><a class="button default" href="#">In Transit PDOs</a></li>
+                    <li><a class="button default" href="#">Track on Maps</a></li>
+                </ul>
             </div>
-            <div style="min-height: 1000px">
-            <div class="block" style="width:100%">
-            <div class="box success adctr" style="margin-left: 200px">Users<span class="badge">54</span></div>
-            <div class="box del adctr">Parcel delivery orders</div>
-            <div class="box primary adctr">Vistors</div>
-            <div class="box success adctr">Sales</div>
+        <div id="admin-header">
+            <div class="block">
+            <div class="box success adctr">Users<span class="badge">0</span></div>
+            <div class="box del adctr">Parcel delivery orders<span class="badge">0</span></div>
+            <div class="box primary adctr">Vistors<span class="badge">0</span></div>
+            <div class="box success adctr">Sales<span class="badge">0</span></div>
             </div>
  <!---The parcel delivery output-->           
             <div id="admin-table">
-            <table>
+            <table class="full-width">
                     <tbody id="admin">
     
                     </tbody>
