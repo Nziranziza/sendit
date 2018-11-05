@@ -6,7 +6,21 @@ function saveParcel(e){
     var from=document.getElementById("from").value;
     var destination=document.getElementById("destination").value;
     var weight=document.getElementById("weight").value;
-   
+    var today = new Date();
+    var dd = today.getDate();
+
+    var mm = today.getMonth()+1; 
+    var yyyy = today.getFullYear();
+     if(dd<10) 
+     {
+    dd='0'+dd;
+     } 
+
+     if(mm<10) 
+     {
+    mm='0'+mm;
+    }    
+    today = dd+'/'+mm+'/'+yyyy;
     //Combine them into a structure
     var  parcel={
         from:from,
@@ -15,7 +29,7 @@ function saveParcel(e){
         delivered:false,
         price:calculatePrice(weight),
         id:Math.random()*10**17,
-        createdAt:new Date(),
+        createdAt:today,
         ordered:false,
         present_loc:from
 
@@ -78,7 +92,7 @@ function fetchParcel(){
                            "<label><b>Weight:</b> "+weight+" kg</label><br />"+
                            "<label><b>Price:</b> "+price+" Rwf</label><br />"+
                            "<label><b>Present location:</b> "+present_loc+"</label><br />"+
-                           "<label>"+date.toString()+"</label><br />"+
+                           "<label>"+date+"</label><br />"+
                            "<button onClick='orderParcel("+id+")' class='"+btnclass+"'>"+ordered+"</button>"+
                            "<button onClick='edit("+id+")' class='label primary'>Change location</button>"+
                            "<div id='"+id+"'></div>"
@@ -126,6 +140,175 @@ function deleteParcel(id){
     localStorage.setItem('parcels',JSON.stringify(parcels));
     fetchParcel();
 }
+//View All Parcel Delivery
+function viewAllPDOs(){
+    var user_content=document.getElementById('user-content');
+    var parcels=JSON.parse(localStorage.getItem('parcels'));
+    if(localStorage.getItem('parcels')==null||!JSON.parse(localStorage.getItem('parcels')).length){
+        user_content.innerHTML="<h1>No Parcel delivery order is available</h1>"
+    }else{
+     user_content.innerHTML="<h1 class='box'>All Parcel Delivery Order ("+parcels.length+")</h1>"+
+                             "<table class='full-width'>"+
+                             "<tbody id='user-table'>"+
+                            
+                             "</tbody>"+
+                             "</table>";
+     var user_table=document.getElementById('user-table');
+     user_table.innerHTML= "<tr class='tadm'>"+
+                           "<th>From</th>"+
+                           "<th>Destination</th>"+
+                           "<th>Price</th>"+
+                           "<th>Weight</th>"+
+                           "<th>Status</th>"+
+                           "<th>Present location</th>"+
+                           "<th>Order ID</th>"+
+                           "<th>Created at</th>"
+                           "</tr>";
+    var length=parcels.length
+    for(i=length-1;i>=0;i--){
+        var from=parcels[i].from;
+        var destination=parcels[i].destination;
+        var weight=parcels[i].weight;
+        var delivered=parcels[i].delivered;
+        var price=parcels[i].price;
+        var date=parcels[i].createdAt;
+        var id=parcels[i].id;
+        var present_loc=parcels[i].present_loc;
+        var status=delivered ? "Delivered":"In transit";
+        var btncls=delivered? "label success":"label primary";
+        var btn_caption=delivered ? "Success":"Deliver";
+        user_table.innerHTML+="<tr class='tadm'>"+
+        "<td><img src='../img/arrow.png' style='width:15px' onClick='detailParcel("+id+")' id='"+id+"img'></img> "+from+"</td>"+
+        "<td>"+destination+"</td>"+
+        "<td>"+price+" Rwf</td>"+
+        "<td>"+weight+" Kg</td>"+
+        "<td>"+status+"</td>"+
+        "<td>"+present_loc+"</td>"+
+        "<td>"+id+"</td>"+
+        "<td>"+date+"</td>"+
+     "</tr>"+"<div id='"+id+"'></div>"
+    }
+} 
+}
+//All Delivered Parcel Orders
+function viewDeliveredPOs(){
+    var user_content=document.getElementById('user-content');
+    var parcels=JSON.parse(localStorage.getItem('parcels'));
+    if(localStorage.getItem('parcels')==null||!JSON.parse(localStorage.getItem('parcels')).length){
+        user_content.innerHTML="<h1>No Parcel delivery order is available</h1>"
+    }else{
+        var no_delivered=0;
+        for(let i=0;i<parcels.length;i++){
+            if(parcels[i].delivered){
+                no_delivered++;
+            }
+        }
+     user_content.innerHTML="<h1 class='box'>Delivered Parcel Orders ("+no_delivered+")</h1>"+
+                             "<table class='full-width'>"+
+                             "<tbody id='user-table'>"+
+                            
+                             "</tbody>"+
+                             "</table>";
+     var user_table=document.getElementById('user-table');
+     user_table.innerHTML= "<tr class='tadm'>"+
+                           "<th>From</th>"+
+                           "<th>Destination</th>"+
+                           "<th>Price</th>"+
+                           "<th>Weight</th>"+
+                           "<th>Status</th>"+
+                           "<th>Present location</th>"+
+                           "<th>Order ID</th>"+
+                           "<th>Created at</th>"
+                           "</tr>";
+    var length=parcels.length
+    for(i=length-1;i>=0;i--){
+        if(parcels[i].delivered){
+        var from=parcels[i].from;
+        var destination=parcels[i].destination;
+        var weight=parcels[i].weight;
+        var delivered=parcels[i].delivered;
+        var price=parcels[i].price;
+        var date=parcels[i].createdAt;
+        var id=parcels[i].id;
+        var present_loc=parcels[i].present_loc;
+        var status=delivered ? "Delivered":"In transit";
+        var btncls=delivered? "label success":"label primary";
+        var btn_caption=delivered ? "Success":"Deliver";
+        user_table.innerHTML+="<tr class='tadm'>"+
+        "<td><img src='../img/arrow.png' style='width:15px' onClick='detailParcel("+id+")' id='"+id+"img'></img> "+from+"</td>"+
+        "<td>"+destination+"</td>"+
+        "<td>"+price+" Rwf</td>"+
+        "<td>"+weight+" Kg</td>"+
+        "<td>"+status+"</td>"+
+        "<td>"+present_loc+"</td>"+
+        "<td>"+id+"</td>"+
+        "<td>"+date+"</td>"+
+     "</tr>"+"<div id='"+id+"'></div>"
+    }
+}
+} 
+}
+//In transit Delivered Order
+function viewInTransitPDOs(){
+    var user_content=document.getElementById('user-content');
+    var parcels=JSON.parse(localStorage.getItem('parcels'));
+    if(localStorage.getItem('parcels')==null||!JSON.parse(localStorage.getItem('parcels')).length){
+        user_content.innerHTML="<h1>No Parcel delivery order is available</h1>"
+    }else{
+        var non_delivered=0;
+        for(let i=0;i<parcels.length;i++){
+            if(parcels[i].delivered){
+                non_delivered++;
+            }
+        }
+     user_content.innerHTML="<h1 class='box'>In Transit Parcel Delivery Orders ("+non_delivered+")</h1>"+
+                             "<table class='full-width'>"+
+                             "<tbody id='user-table'>"+
+                            
+                             "</tbody>"+
+                             "</table>";
+     var user_table=document.getElementById('user-table');
+     user_table.innerHTML= "<tr class='tadm'>"+
+                           "<th>From</th>"+
+                           "<th>Destination</th>"+
+                           "<th>Price</th>"+
+                           "<th>Weight</th>"+
+                           "<th>Status</th>"+
+                           "<th>Present location</th>"+
+                           "<th>Order ID</th>"+
+                           "<th>Created at</th>"
+                           "</tr>";
+    var length=parcels.length
+    for(i=length-1;i>=0;i--){
+        if(!parcels[i].delivered){
+        var from=parcels[i].from;
+        var destination=parcels[i].destination;
+        var weight=parcels[i].weight;
+        var delivered=parcels[i].delivered;
+        var price=parcels[i].price;
+        var date=parcels[i].createdAt;
+        var id=parcels[i].id;
+        var present_loc=parcels[i].present_loc;
+        var status=delivered ? "Delivered":"In transit";
+        var btncls=delivered? "label success":"label primary";
+        var btn_caption=delivered ? "Success":"Deliver";
+        user_table.innerHTML+="<tr class='tadm'>"+
+        "<td><img src='../img/arrow.png' style='width:15px' onClick='detailParcel("+id+")' id='"+id+"img'></img> "+from+"</td>"+
+        "<td>"+destination+"</td>"+
+        "<td>"+price+" Rwf</td>"+
+        "<td>"+weight+" Kg</td>"+
+        "<td>"+status+"</td>"+
+        "<td>"+present_loc+"</td>"+
+        "<td>"+id+"</td>"+
+        "<td>"+date+"</td>"+
+     "</tr>"+"<div id='"+id+"'></div>"}
+    }
+} 
+}
+
+
+
+
 /*Admin codes
 _______________________________________________________________________________________________________________________________________*/
 //fetch parcels for the admin
@@ -221,3 +404,4 @@ function changePresentloc(id){
  }else
  alert("Type in new location");
 }
+

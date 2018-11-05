@@ -14,6 +14,7 @@
         <link rel="shortcut icon" type="image/png" href="../img/send.png"/>
     </head>
     <body onload="fetchParcel()">
+<!--Header of the page-->
             <header>
                     <div class="container">
                             <div id="brand">
@@ -29,18 +30,23 @@
                         </nav>
                     </div>
             </header>
+
         <div class="container">
+<!--User Dashboard header-->
             <div class="box" id="user-header">
                 <label class="top-label">Create Parcel Delivery Order With SendIT</label>
               <div id="user-btn">
-                <button class="button current">Create Parcel DOs</button>
-                <button class="button primary">Delivered Parcel</button>
-                <button class="button primary">In Transit Parcel DOs</button>
-                <button class="button primary">All my Parcel DOs</button>
-                <button class="button primary">Book Parcel DOs</button>
+                <a class="button current" href="createparcel.html">Create Parcel DOs</a>
+                <a class="button primary" href="#" onClick="viewDeliveredPOs()">Delivered Parcel</a>
+                <a class="button primary" href="#" onClick="viewInTransitPDOs()">In Transit Parcel DOs</a>
+                <a class="button primary" href="#" onClick="viewAllPDOs()">All my Parcel DOs</a>
+                <a class="button primary">Truck my Parcel</a>
               </div>
             </div>
-            <div class="block">
+
+<!--User content is displayed here-->
+        <section id="user-content">
+          <div class="block">
             <div class="form-3">
                 <form action="#" class="box">
                     <label>Please indicate where your parcel is loacted</label>
@@ -63,7 +69,8 @@
             <div class="form-3 margin-left ads">
                 <img src="../img/home-courier.png"/> 
             </div>
-        </div>
+          </div>
+        </section>
         <footer>
            <hr />
            <p>&copy SendIT 2018. <a href="#" style="padding-right:10px">Terms</a><a href="#">Privacy</a></p>
