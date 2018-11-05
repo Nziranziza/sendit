@@ -294,9 +294,9 @@ ________________________________________________________________________________
 ______________________________________________________________________________*/
 #about-img {
     background:url("../img/about.jpg") no-repeat 0px -300px ;
-    min-height:500px;
+    min-height:400px;
     background-size: cover;
-    color:aquamarine;
+    color:white;
     text-align: center
 
   }
