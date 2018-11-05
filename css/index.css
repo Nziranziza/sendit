@@ -72,8 +72,9 @@ a{
 }
 /*enclose the content in the box*/
 .box{
+    margin-top: 1rem;
     padding: 1rem 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     background-color:#fff;
     border-radius: 0.3rem;
     border:1px solid #d8dee2
@@ -248,6 +249,37 @@ _____________________________________________________________________________*/
 #admin-table{
     margin-left:200px
 }
+.tadm td,.tadm th{
+    border-style: solid;
+    background-color:#999;
+    color:white;
+    border-color: darkgray;
+    margin:0px;
+    padding: 5px;
+}
+.adctr{
+    color:white;
+    height: 5rem;
+    font-size: 1.5rem;
+    display:table;
+    margin:5px;
+}
+
+/*User Dashboard
+__________________________________________________________________________________*/
+#user-btn button{
+    margin-bottom: -1.2rem;
+    border: #2376be solid;
+    border-radius: 0px
+}
+#user-btn .current{
+    border-bottom: aliceblue solid;
+    background-color: aliceblue;
+}
+#user-header{
+    text-align: center;
+    border-bottom:#2376be solid;
+}
 
 /*Small Devices
 _____________________________________________________________________________*/
@@ -318,10 +350,6 @@ body .rectangle-3,.rectangle-2-3{
 
 /*Unclassified Style
 ___________________________________________________________________________*/
-td{
-    padding-left: 50px;
-    padding-right: 50px;
-}
 #err-msg{
     color:red
 }
@@ -340,22 +368,6 @@ margin-left: 20px;
     background-color: rgb(171, 226, 226);
     color:#f1827e
 }
-.adctr{
-    color:white;
-    height: 5rem;
-    font-size: 1.5rem;
-    display:table;
-    margin:5px;
-}
-
-.tadm td{
-      border-style: solid;
-      background-color:#999;
-      color:white;
-      border-color: darkgray;
-      margin:0px;
-      padding: 5px
-  }
 .form{
     margin-top: 10px;
     padding: 5px;

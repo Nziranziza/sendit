@@ -13,7 +13,7 @@ function saveParcel(e){
         destination:destination,
         weight:weight,
         delivered:false,
-        price:0,
+        price:calculatePrice(weight),
         id:Math.random()*10**17,
         createdAt:new Date(),
         ordered:false,
@@ -33,6 +33,13 @@ function saveParcel(e){
 }
 fetchParcel();
 e.preventDefault();
+}
+
+//calculate the price of the parcel delivery order
+
+function calculatePrice(weight){
+    price=weight*650
+    return price;
 }
 
 //Fetch parcel order and display them to the page
@@ -67,10 +74,10 @@ function fetchParcel(){
         displayParcel.innerHTML+="<div class='box margin-left'>"+
                            "<div class='popup right' onMouseOver='popup("+id+")' onMouseOut='popup("+id+")' onclick='deleteParcel("+id+")'>x<span class='popuptext' id='"+id+"p'>Remove</span></div>"+
                            "<h3>Parcel order from "+from+" to "+destination+"</h3>"+
-                           "<label>Status: "+status+"</label></br />"+
-                           "<label>Weight: "+weight+" kg</label><br />"+
-                           "<label>Price: "+price+"</label><br />"+
-                           "<label>Present location: "+present_loc+"</label>"+
+                           "<label><b>Status:</b> "+status+"</label></br />"+
+                           "<label><b>Weight:</b> "+weight+" kg</label><br />"+
+                           "<label><b>Price:</b> "+price+" Rwf</label><br />"+
+                           "<label><b>Present location:</b> "+present_loc+"</label><br />"+
                            "<label>"+date.toString()+"</label><br />"+
                            "<button onClick='orderParcel("+id+")' class='"+btnclass+"'>"+ordered+"</button>"+
                            "<button onClick='edit("+id+")' class='label primary'>Change location</button>"+
@@ -124,8 +131,19 @@ ________________________________________________________________________________
 //fetch parcels for the admin
 function adminParcel(){
     var adm=document.getElementById('admin');
-    adm.innerHTML="";
     var parcels=JSON.parse(localStorage.getItem('parcels'));
+    if(localStorage.getItem('parcels')==null||!JSON.parse(localStorage.getItem('parcels')).length){
+        adm.innerHTML="<h1>No Parcel delivery order is available</h1>"
+    }else{
+     adm.innerHTML="<tr class='tadm'>"+
+                    "<th>From</th>"+
+                    "<th>Destination</th>"+
+                    "<th>Price</th>"+
+                    "<th>Weight</th>"+
+                    "<th>Status</th>"+
+                    "<th>Present location</th>"+
+                    "<th>Order ID</th>"+
+                    "</tr>";
     for(i=0;i<parcels.length;i++){
         var from=parcels[i].from;
         var destination=parcels[i].destination;
@@ -141,7 +159,7 @@ function adminParcel(){
         adm.innerHTML+="<tr class='tadm'>"+
         "<td><img src='../img/arrow.png' style='width:15px' onClick='detailParcel("+id+")' id='"+id+"img'></img> "+from+"</td>"+
         "<td>"+destination+"</td>"+
-        "<td>"+price+"</td>"+
+        "<td>"+price+" Rwf</td>"+
         "<td>"+weight+" Kg</td>"+
         "<td>"+status+"</td>"+
         "<td>"+present_loc+"</td>"+
@@ -149,7 +167,7 @@ function adminParcel(){
         "<td><button class='"+btncls+"' onClick='deliverParcel("+id+")'>"+btn_caption+"</button>"+
      "</tr>"+"<div id='"+id+"'></div>"
     }
-    
+} 
 }
 //Deliver the parcel order for Admin 
 function deliverParcel(id){
