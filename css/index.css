@@ -267,14 +267,14 @@ _____________________________________________________________________________*/
     margin:0px;
     padding: 5px;
 }
-.adctr{
+.admctr{
     color:white;
     height: 5rem;
     font-size: 1.5rem;
     display:table;
     margin:5px;
 }
-#admin-header .adctr{
+#admin-header .admctr{
 width: 25%;
 }
 #dmin-header{
