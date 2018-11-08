@@ -390,9 +390,26 @@ body .rectangle-3,body .rectangle-2-3{
     margin:auto;
     float: none;
 }
-.rectangle-2-3 img{
- display: none
+.rectangle-2-3 img,.rectangle-3 img{
+width:50%;
 }
+.square-3 img,.square-3{
+    width:100%;
+}
+#ads-img, #h3-createAcc{
+    display: none;
+}
+.rectangle-3 form{
+    width:95%;
+}
+#about-img #about-title{
+    font-size: 30px;
+}
+#about-img{
+    min-height:250px;
+    background:url("../img/about.jpg") no-repeat -100px -200px ;
+}
+
 }
 @media(max-width:874px){
     .rectangle-3,.rectangle-2-3{
@@ -402,7 +419,23 @@ body .rectangle-3,body .rectangle-2-3{
         width: 98%;
     }
 }
+/*iphone 4 */
 @media(max-width:320px){
+    #why,#why ol li{
+        font-size: 20px;
+    }
+    header nav  li a{
+       margin:0;
+       padding: 0;
+       padding-left: 8px;
+    }
+    #bg-img .to-center h1{
+       font-size: 25px;
+    }
+    #bg-img .to-center h2{
+        font-size: 20px;
+        padding-bottom: 10px
+     }
 
 }
 
