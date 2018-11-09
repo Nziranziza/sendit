@@ -420,7 +420,7 @@ width:50%;
     }
 }
 /*iphone 4 */
-@media(max-width:320px){
+@media(max-width:375px){
     #why,#why ol li{
         font-size: 20px;
     }

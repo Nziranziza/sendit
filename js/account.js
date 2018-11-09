@@ -35,6 +35,7 @@ function login(){
 
     if(localStorage.getItem('accounts')==null){
         alert("Please create account first");
+        return false;
     }else{
         var accounts=JSON.parse(localStorage.getItem('accounts'));
         for (let i=0;i<accounts.length;i++){
