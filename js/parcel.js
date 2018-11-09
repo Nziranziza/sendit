@@ -142,6 +142,16 @@ function deleteParcel(id){
 }
 //View All Parcel Delivery
 function viewAllPDOs(){
+    var link1=document.getElementById('link1');
+    var link2=document.getElementById('link2');
+    var link3=document.getElementById('link3');
+    var link4=document.getElementById('link4');
+    var link5=document.getElementById('link5');
+    link1.setAttribute('class','button primary');
+    link4.setAttribute('class','button current');
+    link3.setAttribute('class','button primary');
+    link2.setAttribute('class','button primary');
+    link5.setAttribute('class','button primary');
     var user_content=document.getElementById('user-content');
     var parcels=JSON.parse(localStorage.getItem('parcels'));
     if(localStorage.getItem('parcels')==null||!JSON.parse(localStorage.getItem('parcels')).length){
@@ -192,6 +202,17 @@ function viewAllPDOs(){
 }
 //All Delivered Parcel Orders
 function viewDeliveredPOs(){
+    var link1=document.getElementById('link1');
+    var link2=document.getElementById('link2');
+    var link3=document.getElementById('link3');
+    var link4=document.getElementById('link4');
+    var link5=document.getElementById('link5');
+    link1.setAttribute('class','button primary');
+    link2.setAttribute('class','button current');
+    link3.setAttribute('class','button primary');
+    link4.setAttribute('class','button primary');
+    link5.setAttribute('class','button primary');
+
     var user_content=document.getElementById('user-content');
     var parcels=JSON.parse(localStorage.getItem('parcels'));
     if(localStorage.getItem('parcels')==null||!JSON.parse(localStorage.getItem('parcels')).length){
@@ -253,6 +274,16 @@ function viewDeliveredPOs(){
 }
 //In transit Delivered Order
 function viewInTransitPDOs(){
+    var link1=document.getElementById('link1');
+    var link2=document.getElementById('link2');
+    var link3=document.getElementById('link3');
+    var link4=document.getElementById('link4');
+    var link5=document.getElementById('link5');
+    link1.setAttribute('class','button primary');
+    link3.setAttribute('class','button current');
+    link2.setAttribute('class','button primary');
+    link4.setAttribute('class','button primary');
+    link5.setAttribute('class','button primary');
     var user_content=document.getElementById('user-content');
     var parcels=JSON.parse(localStorage.getItem('parcels'));
     if(localStorage.getItem('parcels')==null||!JSON.parse(localStorage.getItem('parcels')).length){
@@ -310,6 +341,18 @@ function viewInTransitPDOs(){
     }
 }
 } 
+}
+function trackParcel(){
+    var link1=document.getElementById('link1');
+    var link2=document.getElementById('link2');
+    var link3=document.getElementById('link3');
+    var link4=document.getElementById('link4');
+    var link5=document.getElementById('link5');
+    link1.setAttribute('class','button primary');
+    link3.setAttribute('class','button primary');
+    link2.setAttribute('class','button primary');
+    link4.setAttribute('class','button primary');
+    link5.setAttribute('class','button current');
 }
 
 
