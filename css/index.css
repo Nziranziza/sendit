@@ -275,15 +275,17 @@ _____________________________________________________________________________*/
     margin:5px;
 }
 #admin-header .admctr{
-width: 26%;
+width: 30%;
 }
-#dmin-header{
-    width:80%;
+#dmin-header .block{
+    width:100%;
 }
 #admin-panel{
-    height: 500px;
+    height: 535px;
     padding-left: 0px;
     padding-right: 0px;
+    margin-top: 5px;
+    margin-bottom: 0px;
 }
 
 /*User Dashboard
