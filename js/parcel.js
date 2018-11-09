@@ -145,7 +145,7 @@ function viewAllPDOs(){
     var user_content=document.getElementById('user-content');
     var parcels=JSON.parse(localStorage.getItem('parcels'));
     if(localStorage.getItem('parcels')==null||!JSON.parse(localStorage.getItem('parcels')).length){
-        user_content.innerHTML="<h1>No Parcel delivery order is available</h1>"
+        user_content.innerHTML="<h1 class='box'>No Parcel delivery order is available</h1>"
     }else{
      user_content.innerHTML="<h1 class='box'>All Parcel Delivery Order ("+parcels.length+")</h1>"+
                              "<table class='full-width'>"+
@@ -195,14 +195,16 @@ function viewDeliveredPOs(){
     var user_content=document.getElementById('user-content');
     var parcels=JSON.parse(localStorage.getItem('parcels'));
     if(localStorage.getItem('parcels')==null||!JSON.parse(localStorage.getItem('parcels')).length){
-        user_content.innerHTML="<h1>No Parcel delivery order is available</h1>"
+        user_content.innerHTML="<h1 class='box'>No Parcel delivery order is available</h1>"
     }else{
         var no_delivered=0;
         for(let i=0;i<parcels.length;i++){
             if(parcels[i].delivered){
                 no_delivered++;
             }
-        }
+        }if(!no_delivered){
+          user_content.innerHTML="<h1 class='box'>No Parcel delivery order is available</h1>"
+        }else{
      user_content.innerHTML="<h1 class='box'>Delivered Parcel Orders ("+no_delivered+")</h1>"+
                              "<table class='full-width'>"+
                              "<tbody id='user-table'>"+
@@ -246,6 +248,7 @@ function viewDeliveredPOs(){
      "</tr>"+"<div id='"+id+"'></div>"
     }
 }
+}
 } 
 }
 //In transit Delivered Order
@@ -253,14 +256,16 @@ function viewInTransitPDOs(){
     var user_content=document.getElementById('user-content');
     var parcels=JSON.parse(localStorage.getItem('parcels'));
     if(localStorage.getItem('parcels')==null||!JSON.parse(localStorage.getItem('parcels')).length){
-        user_content.innerHTML="<h1>No Parcel delivery order is available</h1>"
+        user_content.innerHTML="<h1 class='box'>No Parcel delivery order is available</h1>"
     }else{
         var non_delivered=0;
         for(let i=0;i<parcels.length;i++){
-            if(parcels[i].delivered){
+            if(!parcels[i].delivered){
                 non_delivered++;
             }
-        }
+        }if(!non_delivered){
+            user_content.innerHTML="<h1 class='box'>No Parcel delivery order is available</h1>"
+        }else{
      user_content.innerHTML="<h1 class='box'>In Transit Parcel Delivery Orders ("+non_delivered+")</h1>"+
                              "<table class='full-width'>"+
                              "<tbody id='user-table'>"+
@@ -303,6 +308,7 @@ function viewInTransitPDOs(){
         "<td>"+date+"</td>"+
      "</tr>"+"<div id='"+id+"'></div>"}
     }
+}
 } 
 }
 
