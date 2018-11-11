@@ -411,7 +411,25 @@ width:50%;
     min-height:250px;
     background:url("../img/about.jpg") no-repeat -100px -200px ;
 }
-
+#user-header label{
+    font-size: 20px
+}
+#user-content .ads{
+ display:none;
+}
+#user-content .block{
+    display:inline;
+}
+#user-content .form-3{
+    width:100%;
+}
+#user-btn a{
+    margin-bottom: 2px;
+    width:100%;
+}
+#user-content #display table{
+    width:100%
+}
 }
 @media(max-width:874px){
     .rectangle-3,.rectangle-2-3{
