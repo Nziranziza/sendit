@@ -1,11 +1,5 @@
-
-//Receives input from parcel form
-//Save them to LocalStorage
-function saveParcel(e){
-    //collect inputs from form
-    var from=document.getElementById("from").value;
-    var destination=document.getElementById("destination").value;
-    var weight=document.getElementById("weight").value;
+//format date
+function formatDate(){
     var today = new Date();
     var dd = today.getDate();
 
@@ -21,6 +15,16 @@ function saveParcel(e){
     mm='0'+mm;
     }    
     today = dd+'/'+mm+'/'+yyyy;
+    return today;
+}
+//Receives input from parcel form
+//Save them to LocalStorage
+function saveParcel(e){
+    //collect inputs from form
+    var from=document.getElementById("from").value;
+    var destination=document.getElementById("destination").value;
+    var weight=document.getElementById("weight").value;
+    
     //Combine them into a structure
     var  parcel={
         from:from,
@@ -29,7 +33,7 @@ function saveParcel(e){
         delivered:false,
         price:calculatePrice(weight),
         id:Math.random()*10**17,
-        createdAt:today,
+        createdAt:formatDate(),
         ordered:false,
         present_loc:from
 
@@ -454,3 +458,30 @@ function changePresentloc(id){
  alert("Type in new location");
 }
 
+function populate(){
+
+    for(let i=0;i<6;i++){
+    var  parcel={
+        from:"Muhanga",
+        destination:"Kigali",
+        weight:"20Kg",
+        delivered:false,
+        price:calculatePrice(20),
+        id:Math.random()*10**17,
+        createdAt:formatDate(),
+        ordered:false,
+        present_loc:"Muhanga"
+
+    }
+    //Create parcels object and Save the parcel
+    if(localStorage.getItem('parcels')==null){
+        var parcels=new Array();
+        parcels.push(parcel)
+        localStorage.setItem('parcels',JSON.stringify(parcels));
+    }else{
+        //Save the parcel
+        var parcels=JSON.parse(localStorage.getItem('parcels'));
+        parcels.push(parcel);
+        localStorage.setItem('parcels',JSON.stringify(parcels));
+}}
+}
