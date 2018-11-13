@@ -159,10 +159,10 @@ ______________________________________________________________________*/
     color: aqua
 }
 .top-label{
-    font-size: 50px;
+    font-size: 30px;
 }
 #logo{
-    width:50px;
+    width:30px;
 }
 #btn-start{
     background-color:aqua;
@@ -241,7 +241,8 @@ header nav li a{
 }
 #brand{
     float:left;
-    color:white
+    color:white;
+    margin:15px
 
 }
 header a:hover {
@@ -436,6 +437,7 @@ width:50%;
 #user-content #display table{
     width:100%
 }
+
 }
 @media(max-width:874px){
     .rectangle-3,.rectangle-2-3{
