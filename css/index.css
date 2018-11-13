@@ -161,6 +161,9 @@ ______________________________________________________________________*/
 .top-label{
     font-size: 30px;
 }
+.top-label:hover{
+    cursor:pointer;
+}
 #logo{
     width:30px;
 }
