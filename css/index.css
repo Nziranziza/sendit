@@ -303,7 +303,13 @@ ________________________________________________________________________________
     text-align: center;
     border-bottom:#2376be solid;
 }
-
+#user-content .block .form-3 #display{
+    height:600px;
+    overflow-y:scroll
+}
+::-webkit-scrollbar { 
+    display: none; 
+}
 
 /*About page style
 ______________________________________________________________________________*/
