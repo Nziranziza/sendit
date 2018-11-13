@@ -140,6 +140,7 @@ input{
     line-height: 1.5;
     border-radius: 0.25rem;
     font-size: 1rem;
+    padding:3px;
 }
 
 
@@ -175,6 +176,7 @@ ______________________________________________________________________*/
  font-size: 55px;
  margin-bottom: 10px;
 }
+
 /*Home page header background image*/
 #bg-img {
     /* The image used */
@@ -214,6 +216,16 @@ ______________________________________________________________________*/
 }
 #home-section{
     background-color: #d8dee2
+}
+section .table{
+    margin-bottom:20px;
+    display: table;
+}
+#dashboard{
+    width:60%
+}
+.pink-lighten{
+    background-color: #fce4ec
 }
 
 /*Header style
@@ -259,6 +271,12 @@ footer{
 }
 #footer-link{
     padding-right:10px;
+}
+.fixed-footer{
+   position: fixed;
+   bottom:0;
+   left: 0;
+   width:100%;
 }
 
 /*Admin page style
