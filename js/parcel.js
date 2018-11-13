@@ -192,7 +192,7 @@ function viewAllPDOs(){
         var btncls=delivered? "label success":"label primary";
         var btn_caption=delivered ? "Success":"Deliver";
         user_table.innerHTML+="<tr class='tadm'>"+
-        "<td><img src='../img/arrow.png' style='width:15px' onClick='detailParcel("+id+")' id='"+id+"img'></img> "+from+"</td>"+
+        "<td><img src='../img/arrow.png' style='width:15px' onClick='userDetailParcel("+id+")' id='"+id+"img'></img> "+from+"</td>"+
         "<td>"+destination+"</td>"+
         "<td>"+price+" Rwf</td>"+
         "<td>"+weight+" Kg</td>"+
@@ -262,7 +262,7 @@ function viewDeliveredPOs(){
         var btncls=delivered? "label success":"label primary";
         var btn_caption=delivered ? "Success":"Deliver";
         user_table.innerHTML+="<tr class='tadm'>"+
-        "<td><img src='../img/arrow.png' style='width:15px' onClick='detailParcel("+id+")' id='"+id+"img'></img> "+from+"</td>"+
+        "<td><img src='../img/arrow.png' style='width:15px' onClick='userDetailParcel("+id+")' id='"+id+"img'></img> "+from+"</td>"+
         "<td>"+destination+"</td>"+
         "<td>"+price+" Rwf</td>"+
         "<td>"+weight+" Kg</td>"+
@@ -333,7 +333,7 @@ function viewInTransitPDOs(){
         var btncls=delivered? "label success":"label primary";
         var btn_caption=delivered ? "Success":"Deliver";
         user_table.innerHTML+="<tr class='tadm'>"+
-        "<td><img src='../img/arrow.png' style='width:15px' onClick='detailParcel("+id+")' id='"+id+"img'></img> "+from+"</td>"+
+        "<td><img src='../img/arrow.png' style='width:15px' onClick='userDetailParcel("+id+")' id='"+id+"img'></img> "+from+"</td>"+
         "<td>"+destination+"</td>"+
         "<td>"+price+" Rwf</td>"+
         "<td>"+weight+" Kg</td>"+
@@ -393,7 +393,7 @@ function adminParcel(){
         var btncls=delivered? "label success":"label primary";
         var btn_caption=delivered ? "Success":"Deliver";
         adm.innerHTML+="<tr class='tadm'>"+
-        "<td><img src='../img/arrow.png' style='width:15px' onClick='detailParcel("+id+")' id='"+id+"img'></img> "+from+"</td>"+
+        "<td><img src='../img/arrow.png' style='width:15px' onClick='userDetailParcel("+id+")' id='"+id+"img'></img> "+from+"</td>"+
         "<td>"+destination+"</td>"+
         "<td>"+price+" Rwf</td>"+
         "<td>"+weight+" Kg</td>"+
@@ -484,4 +484,28 @@ function populate(){
         parcels.push(parcel);
         localStorage.setItem('parcels',JSON.stringify(parcels));
 }}
+}
+//User detail and change the destination
+function userDetailParcel(id){
+
+    var parcels=JSON.parse(localStorage.getItem('parcels'));
+    var view=document.getElementById(id);
+    for(i=0;i<parcels.length;i++){
+        if(id===parcels[i].id){
+            var status=parcels[i].delivered ? "Delivered":"In transit";
+            if(view.innerHTML)
+              view.innerHTML="";
+            else
+              view.innerHTML="<div class='box'>"+
+                             "<h3>Parcel delivery Order details</h3>"+
+                             "<b>Id:</b> "+parcels[i].id+"<br />"+
+                             "<b>From:</b> "+parcels[i].from+"<br />"+
+                             "<b>Price:</b> "+parcels[i].price+"<br />"+
+                             "<b>Status:</b> "+status+"<br />"+
+                             "<b>Destination:</b><br />"+
+                             "<input type='text' value='"+parcels[i].destination+"'placeholder='New location' id='"+id+"pr'>"+
+                             "<button class='button primary' onClick='changePresentloc("+id+")'>Update</button>"
+                             "</div>";
+}
+    }
 }
