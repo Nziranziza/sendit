@@ -352,11 +352,17 @@ function trackParcel(){
     var link3=document.getElementById('link3');
     var link4=document.getElementById('link4');
     var link5=document.getElementById('link5');
+    var map = document.getElementById('map');
     link1.setAttribute('class','button primary');
     link3.setAttribute('class','button primary');
     link2.setAttribute('class','button primary');
     link4.setAttribute('class','button primary');
     link5.setAttribute('class','button current');
+    var user_content=document.getElementById('user-content');
+    user_content.innerHTML="<label class='top-label'>Parcel Tracking with SendIT</label>"+
+                            "<div class='id'></div>"
+                            
+    
 }
 
 
@@ -457,9 +463,9 @@ function changePresentloc(id){
  }else
  alert("Type in new location");
 }
-
+//Initialize the app with some data
 function populate(){
-
+    localStorage.clear();
     for(let i=0;i<6;i++){
     var  parcel={
         from:"Muhanga",
