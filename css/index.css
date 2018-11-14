@@ -535,3 +535,6 @@ width:33.333333%
 #login-title{
    font-size: 2rem
 }
+#ads-img,#h3-createAcc{
+    float: left;
+}
