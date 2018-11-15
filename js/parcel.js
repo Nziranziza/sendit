@@ -466,12 +466,14 @@ function changePresentloc(id){
 //Initialize the app with some data
 function populate(){
     localStorage.clear();
-    for(let i=0;i<6;i++){
+    
+    for(let i=0;i<10;i++){
+        var status= i>5? true:false;
     var  parcel={
         from:"Muhanga",
         destination:"Kigali",
         weight:"20Kg",
-        delivered:false,
+        delivered:status,
         price:calculatePrice(20),
         id:Math.random()*10**17,
         createdAt:formatDate(),
