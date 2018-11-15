@@ -43,9 +43,21 @@ a{
     white-space: nowrap;
     vertical-align: middle;
     border-radius: 10px;
-    color: #5cb85c;
+    color: #000;
     background-color: #fff;
   }
+  .badge-del{
+      color:#d9534f;
+      background-color: white
+  }
+  .badge-success{
+    color:#5cb85c;
+    background-color: white
+}
+.badge-primary{
+    color: #2376be;
+    background-color: white
+}
 /*This should take full width*/
 .full-width{
     width:100%;
@@ -315,11 +327,14 @@ width: 30%;
     width:100%;
 }
 #admin-panel{
-    height: 535px;
+    height: 545px;
     padding-left: 0px;
     padding-right: 0px;
     margin-top: 5px;
     margin-bottom: 0px;
+}
+.ads{
+    margin-left:30px;
 }
 
 /*User Dashboard

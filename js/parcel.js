@@ -189,8 +189,6 @@ function viewAllPDOs(){
         var id=parcels[i].id;
         var present_loc=parcels[i].present_loc;
         var status=delivered ? "Delivered":"In transit";
-        var btncls=delivered? "label success":"label primary";
-        var btn_caption=delivered ? "Success":"Deliver";
         user_table.innerHTML+="<tr class='tadm'>"+
         "<td><img src='../img/arrow.png' style='width:15px' onClick='userDetailParcel("+id+")' id='"+id+"img'></img> "+from+"</td>"+
         "<td>"+destination+"</td>"+
@@ -259,8 +257,6 @@ function viewDeliveredPOs(){
         var id=parcels[i].id;
         var present_loc=parcels[i].present_loc;
         var status=delivered ? "Delivered":"In transit";
-        var btncls=delivered? "label success":"label primary";
-        var btn_caption=delivered ? "Success":"Deliver";
         user_table.innerHTML+="<tr class='tadm'>"+
         "<td><img src='../img/arrow.png' style='width:15px' onClick='userDetailParcel("+id+")' id='"+id+"img'></img> "+from+"</td>"+
         "<td>"+destination+"</td>"+
@@ -330,8 +326,6 @@ function viewInTransitPDOs(){
         var id=parcels[i].id;
         var present_loc=parcels[i].present_loc;
         var status=delivered ? "Delivered":"In transit";
-        var btncls=delivered? "label success":"label primary";
-        var btn_caption=delivered ? "Success":"Deliver";
         user_table.innerHTML+="<tr class='tadm'>"+
         "<td><img src='../img/arrow.png' style='width:15px' onClick='userDetailParcel("+id+")' id='"+id+"img'></img> "+from+"</td>"+
         "<td>"+destination+"</td>"+
@@ -346,28 +340,6 @@ function viewInTransitPDOs(){
 }
 } 
 }
-function trackParcel(){
-    var link1=document.getElementById('link1');
-    var link2=document.getElementById('link2');
-    var link3=document.getElementById('link3');
-    var link4=document.getElementById('link4');
-    var link5=document.getElementById('link5');
-    var map = document.getElementById('map');
-    link1.setAttribute('class','button primary');
-    link3.setAttribute('class','button primary');
-    link2.setAttribute('class','button primary');
-    link4.setAttribute('class','button primary');
-    link5.setAttribute('class','button current');
-    var user_content=document.getElementById('user-content');
-    user_content.innerHTML="<label class='top-label'>Parcel Tracking with SendIT</label>"+
-                            "<div class='id'></div>"
-                            
-    
-}
-
-
-
-
 /*Admin codes
 _______________________________________________________________________________________________________________________________________*/
 //fetch parcels for the admin
@@ -399,7 +371,7 @@ function adminParcel(){
         var btncls=delivered? "label success":"label primary";
         var btn_caption=delivered ? "Success":"Deliver";
         adm.innerHTML+="<tr class='tadm'>"+
-        "<td><img src='../img/arrow.png' style='width:15px' onClick='userDetailParcel("+id+")' id='"+id+"img'></img> "+from+"</td>"+
+        "<td><img src='../img/arrow.png' style='width:15px' onClick='detailParcel("+id+")' id='"+id+"img'></img> "+from+"</td>"+
         "<td>"+destination+"</td>"+
         "<td>"+price+" Rwf</td>"+
         "<td>"+weight+" Kg</td>"+
@@ -433,7 +405,7 @@ function detailParcel(id){
               view.innerHTML=""
             else
               view.innerHTML="<div class='box'>"+
-                             "<h3>Parcel delivery Order details</h3>"+
+                             "<h3>Summary details</h3>"+
                              "<b>Id:</b> "+parcels[i].id+"<br />"+
                              "<b>From:</b> "+parcels[i].from+"<br />"+
                              "<b>Destination:</b> "+parcels[i].destination+"<br />"+
