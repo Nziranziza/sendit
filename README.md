@@ -28,3 +28,5 @@ From Admin page if there is not Parcel delivery order. Go on the user page and c
 * Once you have your parcel delivery order
 * Click on the arrow icon and change the present location of the parcel
 * Click on the deliver button to change the status of parcel delivery 
+
+**NB:** This is the [API ENDPOINTS](https://github.com/Nziranziza/Send-IT)
